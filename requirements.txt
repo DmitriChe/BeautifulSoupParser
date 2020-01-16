@@ -1,3 +1,4 @@
 bs4
 requests
-vk_api
+telebot
+pyTelegramBotAPI
