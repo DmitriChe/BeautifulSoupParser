@@ -14,12 +14,8 @@ with open('bot_info', 'r') as f:
     BOT_TOKEN = f.readline().strip()
     print(BOT_TOKEN)
 
-proxies = {
- 'http': 'http://167.86.96.4:3128',
- 'https': 'http://167.86.96.4:3128',
-}
-
 bot = telebot.TeleBot(BOT_TOKEN)
+
 
 def get_icos(page_num):
     domain = 'https://icobench.com'
@@ -124,6 +120,11 @@ def answer_user(message):
             f_data.write(json.dumps(data))
         bot.send_message(chat_id=chat_id, text='Для получения файла с данными введите команду /file')
 
+
+proxies = {
+ 'http': 'http://167.86.96.4:3128',
+ 'https': 'http://167.86.96.4:3128',
+}
 
 telebot.apihelper.proxy = proxies
 bot.polling()
